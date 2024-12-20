@@ -5,6 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Gerenciamento</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Estilo adicional para transições */
+    .hidden {
+      display: none;
+    }
+    .fade-in {
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .button-click {
+      animation: buttonClick 0.3s;
+    }
+    @keyframes buttonClick {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(0.95);
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans">
   <div class="flex h-screen">
@@ -16,21 +47,21 @@
       <nav class="flex-1 p-4">
         <ul class="space-y-2">
           <li>
-            <a href="#" class="block p-2 rounded hover:bg-gray-700">Dashboard</a>
+            <a href="#" id="btnDashboard" class="block p-2 rounded hover:bg-gray-700">Dashboard</a>
           </li>
           <li>
-            <a href="#" class="block p-2 rounded hover:bg-gray-700">Produtos</a>
+            <a href="#" id="btnProdutos" class="block p-2 rounded hover:bg-gray-700">Produtos</a>
           </li>
           <li>
-            <a href="#" class="block p-2 rounded hover:bg-gray-700">Categorias</a>
+            <a href="#" id="btnCategorias" class="block p-2 rounded hover:bg-gray-700">Categorias</a>
           </li>
           <li>
-            <a href="#" class="block p-2 rounded hover:bg-gray-700">Relatórios</a>
+            <a href="#" id="btnRelatorios" class="block p-2 rounded hover:bg-gray-700">Relatórios</a>
           </li>
         </ul>
       </nav>
       <div class="p-4 border-t border-gray-700">
-        <button class="w-full bg-red-500 text-white py-2 rounded hover:bg-red-600">
+        <button id="btnSair" class="w-full bg-red-500 text-white py-2 rounded hover:bg-red-600">
           Sair
         </button>
       </div>
@@ -41,68 +72,10 @@
       <header class="mb-6">
         <h1 class="text-2xl font-bold text-gray-800">Painel de Gerenciamento</h1>
       </header>
-
-      <!-- Dashboard Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <div class="p-4 bg-white shadow rounded">
-          <h2 class="text-gray-700 font-medium">Produtos Cadastrados</h2>
-          <p class="text-2xl font-bold text-gray-800">125</p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="p-4 bg-white shadow rounded">
-          <h2 class="text-gray-700 font-medium">Vendas Realizadas</h2>
-          <p class="text-2xl font-bold text-gray-800">R$ 25.300</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="p-4 bg-white shadow rounded">
-          <h2 class="text-gray-700 font-medium">Clientes Ativos</h2>
-          <p class="text-2xl font-bold text-gray-800">45</p>
-        </div>
-      </div>
-
-      <!-- Tabela de Dados -->
-      <section class="mt-8">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4">Produtos</h2>
-        <div class="overflow-x-auto">
-          <table class="min-w-full bg-white border border-gray-300">
-            <thead class="bg-gray-200">
-              <tr>
-                <th class="px-4 py-2 text-left text-gray-600">ID</th>
-                <th class="px-4 py-2 text-left text-gray-600">Nome</th>
-                <th class="px-4 py-2 text-left text-gray-600">Categoria</th>
-                <th class="px-4 py-2 text-left text-gray-600">Preço</th>
-                <th class="px-4 py-2 text-center text-gray-600">Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-t">
-                <td class="px-4 py-2">1</td>
-                <td class="px-4 py-2">Notebook</td>
-                <td class="px-4 py-2">Eletrônicos</td>
-                <td class="px-4 py-2">R$ 3.500</td>
-                <td class="px-4 py-2 text-center">
-                  <button class="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Editar</button>
-                  <button class="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">Excluir</button>
-                </td>
-              </tr>
-              <tr class="border-t">
-                <td class="px-4 py-2">2</td>
-                <td class="px-4 py-2">Mouse</td>
-                <td class="px-4 py-2">Acessórios</td>
-                <td class="px-4 py-2">R$ 150</td>
-                <td class="px-4 py-2 text-center">
-                  <button class="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Editar</button>
-                  <button class="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">Excluir</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+      <div id="content" class="fade-in">Bem-vindo ao sistema de gerenciamento!</div>
     </main>
   </div>
+  <!-- Link para o arquivo de animações -->
+  <script src="../script/animations.js"></script>
 </body>
 </html>
