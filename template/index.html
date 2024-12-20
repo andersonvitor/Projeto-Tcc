@@ -1,95 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../styles/output.css" rel="stylesheet">
-
-        <title>Document</title>
-    </head>
-    <body class="bg-gray-100 font-sans">
-  
-      <!-- Container Principal -->  
-      <div class="flex min-h-screen"> 
-  
-          <!-- Menu Lateral --> 
-          <aside class="w-64 bg-gray-800 text-gray-100">
-              <div class="p-4 text-xl font-bold border-b border-gray-700">
-                  Controle Estoque
-              </div>
-              <nav>
-                  <ul>
-                      <li class="p-4 hover:bg-gray-700">
-                          <a href="#">Gerenciamento</a>
-                      </li>
-                      <li class="p-4 hover:bg-gray-700">
-                          <a href="#">Produtos</a>
-                      </li>
-                      <li class="p-4 hover:bg-gray-700">
-                          <a href="#">Categorias</a>
-                      </li>
-                      <li class="p-4 hover:bg-gray-700">
-                          <a href="#">Fornecedores</a>
-                      </li>
-                      <li class="p-4 hover:bg-gray-700">
-                          <a href="#">Movimentação</a>
-                      </li>
-                      <li class="p-4 hover:bg-gray-700">
-                          <a href="#">Entradas</a>
-                      </li>
-                      <li class="p-4 hover:bg-gray-700">
-                          <a href="#">Saídas</a>
-                      </li>
-                      <li class="p-4 hover:bg-gray-700">
-                          <a href="#">Administração</a>
-                      </li>
-                  </ul>
-              </nav>
-          </aside>
-  
-          <!-- Conteúdo Principal -->
-          <main class="flex-1 p-6">
-              <!-- Cabeçalho -->
-              <div class="mb-6">
-                  <h1 class="text-3xl font-bold">Página Inicial</h1>
-                  <p class="text-gray-600">Visão Geral do Controle de Estoque</p>
-              </div>
-  
-              <!-- Indicadores -->
-              <div class="grid grid-cols-4 gap-6 mb-6">
-                  <div class="bg-blue-500 text-white p-4 rounded shadow">
-                      <h2 class="text-xl font-semibold">4 Produtos Cadastrados</h2>
-                      <p>19 Itens no Estoque</p>
-                      <a href="#" class="text-sm underline">Ver Relação de Produtos</a>
-                  </div>
-                  <div class="bg-red-500 text-white p-4 rounded shadow">
-                      <h2 class="text-xl font-semibold">2 Produtos com Estoque Zerado</h2>
-                      <a href="#" class="text-sm underline">Ver Produtos Estoque Zerado</a>
-                  </div>
-                  <div class="bg-yellow-500 text-white p-4 rounded shadow">
-                      <h2 class="text-xl font-semibold">3 Produtos com Estoque Mínimo</h2>
-                      <a href="#" class="text-sm underline">Ver Produtos Estoque Mínimo</a>
-                  </div>
-                  <div class="bg-green-500 text-white p-4 rounded shadow">
-                      <h2 class="text-xl font-semibold">Investimento: R$ 517,00</h2>
-                      <p>Retorno Previsto: R$ 1.412,35</p>
-                      <p>Margem de Lucro: 63,39%</p>
-                  </div>
-              </div>
-  
-              <!-- Gráficos -->
-              <div class="grid grid-cols-2 gap-6">
-                  <div class="bg-white p-4 rounded shadow">
-                      <h2 class="text-xl font-semibold">Entradas e Saídas Últimos 10 Dias</h2>
-                      <div class="h-40 bg-gray-200 mt-4"></div> <!-- Substituir por gráfico -->
-                  </div>
-                  <div class="bg-white p-4 rounded shadow">
-                      <h2 class="text-xl font-semibold">Atividades no Sistema Últimos 10 Dias</h2>
-                      <div class="h-40 bg-gray-200 mt-4"></div> <!-- Substituir por gráfico -->
-                  </div>
-              </div>
-          </main>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Gerenciamento</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-800 text-gray-200 flex flex-col">
+      <div class="p-4 text-lg font-semibold border-b border-gray-700">
+        Sistema de Gerenciamento
       </div>
-  
-    </body>
+      <nav class="flex-1 p-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="#" class="block p-2 rounded hover:bg-gray-700">Dashboard</a>
+          </li>
+          <li>
+            <a href="#" class="block p-2 rounded hover:bg-gray-700">Produtos</a>
+          </li>
+          <li>
+            <a href="#" class="block p-2 rounded hover:bg-gray-700">Categorias</a>
+          </li>
+          <li>
+            <a href="#" class="block p-2 rounded hover:bg-gray-700">Relatórios</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="p-4 border-t border-gray-700">
+        <button class="w-full bg-red-500 text-white py-2 rounded hover:bg-red-600">
+          Sair
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+      <header class="mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">Painel de Gerenciamento</h1>
+      </header>
+
+      <!-- Dashboard Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="p-4 bg-white shadow rounded">
+          <h2 class="text-gray-700 font-medium">Produtos Cadastrados</h2>
+          <p class="text-2xl font-bold text-gray-800">125</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-4 bg-white shadow rounded">
+          <h2 class="text-gray-700 font-medium">Vendas Realizadas</h2>
+          <p class="text-2xl font-bold text-gray-800">R$ 25.300</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-4 bg-white shadow rounded">
+          <h2 class="text-gray-700 font-medium">Clientes Ativos</h2>
+          <p class="text-2xl font-bold text-gray-800">45</p>
+        </div>
+      </div>
+
+      <!-- Tabela de Dados -->
+      <section class="mt-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Produtos</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-300">
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="px-4 py-2 text-left text-gray-600">ID</th>
+                <th class="px-4 py-2 text-left text-gray-600">Nome</th>
+                <th class="px-4 py-2 text-left text-gray-600">Categoria</th>
+                <th class="px-4 py-2 text-left text-gray-600">Preço</th>
+                <th class="px-4 py-2 text-center text-gray-600">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="px-4 py-2">1</td>
+                <td class="px-4 py-2">Notebook</td>
+                <td class="px-4 py-2">Eletrônicos</td>
+                <td class="px-4 py-2">R$ 3.500</td>
+                <td class="px-4 py-2 text-center">
+                  <button class="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Editar</button>
+                  <button class="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">Excluir</button>
+                </td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2">2</td>
+                <td class="px-4 py-2">Mouse</td>
+                <td class="px-4 py-2">Acessórios</td>
+                <td class="px-4 py-2">R$ 150</td>
+                <td class="px-4 py-2 text-center">
+                  <button class="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">Editar</button>
+                  <button class="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">Excluir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
 </html>
