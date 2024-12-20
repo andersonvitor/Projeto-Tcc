@@ -48,7 +48,7 @@ function updateContent(message) {
           const confirmExit = confirm("Tem certeza de que deseja sair?");
           if (confirmExit) {
             updateContent("Você saiu do sistema.");
-            setTimeout(() => (window.location.href = "/"), 2000); // Redireciona para a página inicial
+            setTimeout(() => (window.location.href = "../template/login.html"), 2000); // Redireciona para a página inicial
           }
         },
       },
