@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../styles/output.css" rel="stylesheet">
+
+        <title>Document</title>
+    </head>
+    <body class="bg-gray-100 font-sans">
+  
+      <!-- Container Principal -->  
+      <div class="flex min-h-screen"> 
+  
+          <!-- Menu Lateral --> 
+          <aside class="w-64 bg-gray-800 text-gray-100">
+              <div class="p-4 text-xl font-bold border-b border-gray-700">
+                  Controle Estoque
+              </div>
+              <nav>
+                  <ul>
+                      <li class="p-4 hover:bg-gray-700">
+                          <a href="#">Gerenciamento</a>
+                      </li>
+                      <li class="p-4 hover:bg-gray-700">
+                          <a href="#">Produtos</a>
+                      </li>
+                      <li class="p-4 hover:bg-gray-700">
+                          <a href="#">Categorias</a>
+                      </li>
+                      <li class="p-4 hover:bg-gray-700">
+                          <a href="#">Fornecedores</a>
+                      </li>
+                      <li class="p-4 hover:bg-gray-700">
+                          <a href="#">Movimentação</a>
+                      </li>
+                      <li class="p-4 hover:bg-gray-700">
+                          <a href="#">Entradas</a>
+                      </li>
+                      <li class="p-4 hover:bg-gray-700">
+                          <a href="#">Saídas</a>
+                      </li>
+                      <li class="p-4 hover:bg-gray-700">
+                          <a href="#">Administração</a>
+                      </li>
+                  </ul>
+              </nav>
+          </aside>
+  
+          <!-- Conteúdo Principal -->
+          <main class="flex-1 p-6">
+              <!-- Cabeçalho -->
+              <div class="mb-6">
+                  <h1 class="text-3xl font-bold">Página Inicial</h1>
+                  <p class="text-gray-600">Visão Geral do Controle de Estoque</p>
+              </div>
+  
+              <!-- Indicadores -->
+              <div class="grid grid-cols-4 gap-6 mb-6">
+                  <div class="bg-blue-500 text-white p-4 rounded shadow">
+                      <h2 class="text-xl font-semibold">4 Produtos Cadastrados</h2>
+                      <p>19 Itens no Estoque</p>
+                      <a href="#" class="text-sm underline">Ver Relação de Produtos</a>
+                  </div>
+                  <div class="bg-red-500 text-white p-4 rounded shadow">
+                      <h2 class="text-xl font-semibold">2 Produtos com Estoque Zerado</h2>
+                      <a href="#" class="text-sm underline">Ver Produtos Estoque Zerado</a>
+                  </div>
+                  <div class="bg-yellow-500 text-white p-4 rounded shadow">
+                      <h2 class="text-xl font-semibold">3 Produtos com Estoque Mínimo</h2>
+                      <a href="#" class="text-sm underline">Ver Produtos Estoque Mínimo</a>
+                  </div>
+                  <div class="bg-green-500 text-white p-4 rounded shadow">
+                      <h2 class="text-xl font-semibold">Investimento: R$ 517,00</h2>
+                      <p>Retorno Previsto: R$ 1.412,35</p>
+                      <p>Margem de Lucro: 63,39%</p>
+                  </div>
+              </div>
+  
+              <!-- Gráficos -->
+              <div class="grid grid-cols-2 gap-6">
+                  <div class="bg-white p-4 rounded shadow">
+                      <h2 class="text-xl font-semibold">Entradas e Saídas Últimos 10 Dias</h2>
+                      <div class="h-40 bg-gray-200 mt-4"></div> <!-- Substituir por gráfico -->
+                  </div>
+                  <div class="bg-white p-4 rounded shadow">
+                      <h2 class="text-xl font-semibold">Atividades no Sistema Últimos 10 Dias</h2>
+                      <div class="h-40 bg-gray-200 mt-4"></div> <!-- Substituir por gráfico -->
+                  </div>
+              </div>
+          </main>
+      </div>
+  
+    </body>
+</html>
