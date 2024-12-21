@@ -1,9 +1,8 @@
 <?php
-session_start(); // Inicia a sessão
+session_start();
 require 'db.php'; // Inclui a conexão com o banco de dados
 
 $error = '';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
@@ -16,10 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($user && $user['password'] === md5($password)) {
-                // Login bem-sucedido
+            if ($user && $user['password'] === $password) { // Comparação simples (não seguro, deve usar hash)
                 $_SESSION['user_id'] = $user['id'];
-                header('Location: dashboard.php'); // Redireciona para a página protegida
+                $_SESSION['user_name'] = $user['name'];
+                header('Location: dashboard.php'); // Redireciona para a página inicial
                 exit;
             } else {
                 $error = 'Email ou senha incorretos.';
@@ -31,9 +30,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Por favor, preencha todos os campos.';
     }
 }
-
-// Renderiza o erro no frontend
-header('Content-Type: application/json');
-echo json_encode(['error' => $error]);
-exit;
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded shadow-lg w-full max-w-sm">
+        <h1 class="text-2xl font-bold text-center mb-4">Login</h1>
+
+        <?php if (!empty($error)): ?>
+            <p class="text-red-500 text-center mb-4"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
+
+        <form action="login.php" method="POST" class="space-y-4">
+            <div>
+                <label for="email" class="block text-gray-700">Email:</label>
+                <input type="email" id="email" name="email" class="w-full border px-3 py-2 rounded" required>
+            </div>
+            <div>
+                <label for="password" class="block text-gray-700">Senha:</label>
+                <input type="password" id="password" name="password" class="w-full border px-3 py-2 rounded" required>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Entrar</button>
+        </form>
+        <div class="mt-4 text-center">
+            <a href="register.php" class="text-sm text-blue-500 hover:underline">Não tem uma conta? Cadastre-se</a>
+        </div>
+    </div>
+</body>
+</html>
