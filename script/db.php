@@ -1,7 +1,7 @@
 <?php
 // Configuração do banco de dados
 $host = 'localhost';
-$dbname = 'sistema_login';
+$dbname = 'cadastro';
 $username = 'root'; // Usuário do banco
 $password = ''; // Senha do banco
 
